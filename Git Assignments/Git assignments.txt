@@ -1,0 +1,133 @@
+Git Assignment
+Section 0
+1.mkdir project_dir      cd project_dir
+2.git init
+3.touch index.html
+4.git status
+5.git add index.html
+6.git commit -m "index.html added"
+7.do it in explorer
+8.git status
+9.touch .gitignore and add *.txt to it
+10.git status
+11.git commit -a -m "index.html edited"
+12.git log
+13.change in explorer
+14.git reset --hard
+15.do it in explorer
+16.git add index.html
+17.git restore --staged index.html
+18.git config --global alias.my_add add
+19.git my-add index.html  git commit -m "index.html edited"  
+20.git reset --soft HEAD~1
+
+21.
+22.mkdir Assignments    cd assignments  git init
+23.touch README.txt
+24.git add README.txt   git commit -m "README.txt file created"
+25.git branch html-assignments
+26.git checkout html-assignments
+27.do in explorer
+28.git add index.html         git commit -m "index.html added"
+29.do in explorer
+30.git add index.html     git commit -m "index.html edited"
+31. git checkout master
+32.edit in explorer    git commit -m "new line added"
+33. git checkout html-assignments
+34.do in explorer
+35.git commit -a -m "index.html again edited"
+36.git checkout master
+
+git diff master..html-assignments
+
+
+37.git merge html-assignments
+
+git branch --merged
+
+38.git branch -d html-assignments
+
+Section1
+
+mkdir Assignment    cd Assignment  git init  create a text file  git add README.txt  git commit --m "README.txt added"
+
+1.git branch css-assignment
+2.git checkout css-assignment
+3. do it in file explorer
+4. git add main.css    git commit -m "css-assignments added"
+5.do it in explorer
+6.git add README.txt   git commit -m "line 1 added to README.txt"
+7. git checkout master
+8. do it on explorer   git add README.txt  git commit -m "line 3 added to README.txt"
+9.git checkout css-assignment
+10.do it in explorer
+11.git add main.css git commit -m "line added to main.css"
+12.git checkout master
+
+git diff master..css-assignment
+
+13.git merge css-assignment
+
+clear conflicts  vi README.txt git commit  git branch --merged
+14.git branch -d css-assignment
+
+
+Section2
+
+mkdir Assignment    cd Assignment  git init  create a text file  git add README.txt  git commit --m "README.txt added"
+
+1.git branch css-assignment
+2.git checkout css-assignment
+3. do it in file explorer
+4. git add main.css    git commit -m "css-assignments added"
+5.do it in explorer
+6.git add README.txt   git commit -m "line 1 added to README.txt"
+7. git checkout master
+8. do it on explorer   git add README.txt  git commit -m "line 3 added to README.txt"
+9.git checkout css-assignment
+10.do it in explorer
+11.git add main.css git commit -m "line added to main.css"
+12.git checkout master
+
+git diff master..css-assignment
+
+13.git merge css-assignment
+
+clear conflicts  vi README.txt git commit  git branch --merged
+14.git branch -d css-assignment
+
+Section3
+1.git branch js-assignment
+2. git checkout js-assignment
+3. add assignments 
+4. git add main.js   git commit -m "main.js added"
+5.do it in explorer
+6.git add README.txt     git commit -m "line 1 added to README.txt"
+7.git checkout master
+8.do it in explorer git add README.txt git commit -m "line 1 added to README.txt"
+9.git checkout js-assignment
+10. do it in explorer  
+11.git add main.js  git commit -m "line 1 added to main.js"
+12.git checkout master
+13.git merge js-assignment
+clear conflicts  vi README.txt git commit  git branch --merged
+
+14. git branch -d js-assignment
+
+Section 4
+1.mkdir Assignment3
+2.cd Assignment3
+3.mkdir Assignment
+4.cd Assignment
+5.git init
+6.touch sample.txt
+7.git status
+8. git add sample.txt
+9.git commit -m "sample.txt added"
+10.git log --oneline
+11.git remote add origin https://github.com/Senthamiz13/freshersbatch-june21.git
+
+git remote set-url origin https://github.com/Senthamiz13/freshersbatch-june21.git
+
+git push origin master
+
