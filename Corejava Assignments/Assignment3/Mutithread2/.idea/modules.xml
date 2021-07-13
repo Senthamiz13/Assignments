@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Failfast and Failsafe.iml" filepath="$PROJECT_DIR$/Failfast and Failsafe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Mutithread2.iml" filepath="$PROJECT_DIR$/Mutithread2.iml" />
     </modules>
   </component>
 </project>
