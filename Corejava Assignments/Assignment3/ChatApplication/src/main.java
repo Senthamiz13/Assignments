@@ -1,12 +1,15 @@
-
 import java.util.*;
+import java.util.concurrent.CopyOnWriteArrayList;
+
 public class main {
 
     public static void main(String args[]){
         String end;
         String logout;
 
-        ArrayList<ChatRoom> chatRoomCollection = new ArrayList<>();  //// chatrooms
+        CopyOnWriteArrayList<ChatRoom> chatRoomList = new CopyOnWriteArrayList<>();  //// chatrooms
+        CopyOnWriteArrayList<User> usersList=new CopyOnWriteArrayList<>();//
+        ArrayList<Message> messagesList=new ArrayList<Message>();
 
         do{
             System.out.println("> Java Chat Application ");
@@ -24,66 +27,48 @@ public class main {
                 case "A":
 
                     ///////////// Creating Chat room /////////////
-
                     boolean chatroomNameCheckerFlag=false;
                     System.out.print("Name of the Chat Room: ");
                     String newChatRoomName = input.next(); // storing new chat room name
-                    Iterator <ChatRoom> i = chatRoomCollection.iterator();//iterator for chatRoomCollection
 
-                    for(ChatRoom x:chatRoomCollection){
-                        if(x.name.equals(newChatRoomName)==true)
-                        {
+                    for(ChatRoom x:chatRoomList){
+                        if(x.name.equals(newChatRoomName)==true) {
                             System.out.println("Chatroom already exits");
                             chatroomNameCheckerFlag=true;
                         }
                     }
                     if(chatroomNameCheckerFlag==false){
                         ChatRoom c = new ChatRoom(newChatRoomName); //new ChatRoom object
-                        chatRoomCollection.add(c); //adding new chatrooms
+                        chatRoomList.add(c); //adding new chatrooms
                     }
+                    break;
 
                 case "B":
 
                     ////////////adding a user//////////////
-
-                    Iterator<ChatRoom> i2=chatRoomCollection.iterator();
-                    double uid=Math.random();
-                    int no=0;
-
                     System.out.print("Enter the user name: ");
                     Scanner input2 =new Scanner(System.in);
                     String username = input2.next();
+                    usersList.add(new User(username)); //adding new user to user
+                    break;
 
-                    System.out.print("Chatroom name: ");
-                    while(i2.hasNext()){
-                        System.out.println(" CHAT ROOM  :"+no+":"+i2.next().name); //displaying existing chat room
-                        no++;
-                    }
-                    String nameOfExistingChatRoom = input.next();
-                    for(ChatRoom x:chatRoomCollection){
-                        if(x.name.equals(nameOfExistingChatRoom)){
-                            User u = new User(username); ////adding a new user in userclass
-                            x.users.add(u); //adding new user to user
-                        }
-                    }
                 case "C":
+
                     System.out.print("Chatroom name: ");
                     String existingChatRoom=input.next();
-
                     boolean existingChatRoomChecker=false;
                     boolean existingUserNameChecker=false;
 
-                    for(ChatRoom x:chatRoomCollection){
+                    for(ChatRoom x:chatRoomList){
                         if(x.name.equals(existingChatRoom)) {
                             existingChatRoomChecker=true;
-                            for(User u:x.users){
+                            for(User u:usersList){
                                 System.out.println(u.uname);  //print all names in user
                             }
                             System.out.print("Enter user name: ");
                             String username2 = input.next();
 
-                            for(User y:x.users){
-
+                            for(User y:usersList){
                                 if(username2.equals(y.uname)){
                                     existingUserNameChecker=true;
                                     do{
@@ -102,20 +87,19 @@ public class main {
                                                 Scanner sc2= new Scanner(System.in);
                                                 System.out.println("Enter the message: ");
                                                 String msg=sc2.nextLine();
-
                                                 Message umsg=new Message(msg,y.uname);
-                                                x.messages.add(umsg);
+                                                messagesList.add(umsg);
                                                 System.out.println("message sent");
                                                 break;
                                             case "E":
                                                 System.out.println("Messages in Chatroom"+x.name);
-                                                for(Message m:x.messages){
+                                                for(Message m:messagesList){
                                                     System.out.println(m.mname+"> "+m.data);
                                                 }
                                                 break;
                                             case "F":
                                                 System.out.println("Users in chatroom "+x.name);
-                                                for(User u:x.users){
+                                                for(User u:usersList){
                                                     System.out.println(u.uname);
                                                 }
                                                 break;
@@ -126,15 +110,19 @@ public class main {
                                                 System.out.print("Enter the userName to delete: ");
                                                 Scanner input3 =new Scanner(System.in);
                                                 String deluser = input3.nextLine();
-                                                for (User u:x.users) { x.users.remove(deluser); }
-                                                System.out.println("User "+deluser+ "Deleted");
+                                                for (User s:usersList){
+                                                    if (s.uname.equals(deluser)) {usersList.remove(s);}
+                                                }
+                                                System.out.println("User "+deluser+" Deleted");
                                                 break;
                                             case "I":
                                                 System.out.print("Enter the chatroom to delete: ");
                                                 Scanner input4 = new Scanner(System.in);
                                                 String delcr = input4.nextLine();
-                                                chatRoomCollection.remove(delcr);
-                                                System.out.println("Chatroom "+delcr+ "Deleted");
+                                                for (ChatRoom m: chatRoomList){
+                                                    if (m.name.equals(delcr)){chatRoomList.remove(m);}
+                                                }
+                                                System.out.println("Chatroom "+delcr+" Deleted");
                                                 break;
 
                                             default:
@@ -161,4 +149,5 @@ public class main {
         } while(end.equals("Y"));
 
     }
+}
 }
