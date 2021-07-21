@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="obj" class="springCore.Customer">
+        <property name="customerId" value="123 "></property>
+        <property name="customerName" value="Sen"></property>
+        <property name="customerContact" value="8754747329 "></property>
+        <property name="customerAddress" ref="address"></property>
+    </bean>
+
+    <bean id="address" class="springCore.Address">
+        <property name="street" value="APJ Abdul kalam street"></property>
+        <property name="city" value="Puducherry"></property>
+        <property name="state" value=" Puducherry "></property>
+        <property name="zip" value="605014"></property>
+        <property name="country" value=" India"></property>
+    </bean>
+
+</beans>
