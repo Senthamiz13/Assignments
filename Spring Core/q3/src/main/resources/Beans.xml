@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="BankAccountobj" class="spring.q3.BankAccount">
+    </bean>
+
+    <bean id="BankAccountControllerobj" class="spring.q3.BankAccountController" autowire="byName">
+    </bean>
+
+    <bean id="BankAccountRepositoryImplobj" class="spring.q3.BankAccountRepositoryImpl" autowire="byType">
+    </bean>
+
+    <bean id="BankAccountServiceImpl" class="spring.q3.BankAccountServiceImpl" autowire="constructor">
+    </bean>
+
+</beans>

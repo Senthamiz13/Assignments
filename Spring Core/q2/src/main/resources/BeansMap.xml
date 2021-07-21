@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <beans>
+        <bean id="myquestion" class="Map.Question">
+            <property name="questionId" value="124"></property>
+            <property name="question" value="Types of pollution?"></property>
+            <property name="answers">
+                <map>
+                    <entry key="1" value="Air Pollution"/>
+                    <entry key="2" value="Water Pollution"/>
+                    <entry key="3" value="Light Pollution"/>
+                    <entry key="4" value="Soil Pollution"/>
+                </map>
+            </property>
+        </bean>
+    </beans>
+</beans>
