@@ -1,0 +1,13 @@
+127.0.0.1 - - [27/Jul/2021:07:37:17 +0530] "GET /login HTTP/1.1" 500 6821 http-bio-8080-exec-1 1565
+127.0.0.1 - - [27/Jul/2021:07:38:28 +0530] "GET /login HTTP/1.1" 500 6821 http-bio-8080-exec-2 294
+127.0.0.1 - - [27/Jul/2021:07:38:29 +0530] "GET /login HTTP/1.1" 500 6821 http-bio-8080-exec-3 13
+127.0.0.1 - - [27/Jul/2021:07:39:44 +0530] "GET /login HTTP/1.1" 200 909 http-bio-8080-exec-4 137
+127.0.0.1 - - [27/Jul/2021:07:40:12 +0530] "GET /login HTTP/1.1" 200 876 http-bio-8080-exec-5 278
+127.0.0.1 - - [27/Jul/2021:07:40:13 +0530] "GET /login HTTP/1.1" 200 876 http-bio-8080-exec-6 3
+127.0.0.1 - - [27/Jul/2021:07:40:41 +0530] "GET /login HTTP/1.1" 200 876 http-bio-8080-exec-8 169
+127.0.0.1 - - [27/Jul/2021:07:40:46 +0530] "GET /login?language=vi HTTP/1.1" 200 898 http-bio-8080-exec-9 9
+127.0.0.1 - - [27/Jul/2021:07:40:48 +0530] "GET /login?language=fr HTTP/1.1" 200 892 http-bio-8080-exec-10 5
+127.0.0.1 - - [27/Jul/2021:07:40:50 +0530] "GET /login?language=en HTTP/1.1" 200 876 http-bio-8080-exec-10 4
+127.0.0.1 - - [27/Jul/2021:07:40:51 +0530] "GET /login?language=vi HTTP/1.1" 200 898 http-bio-8080-exec-10 3
+127.0.0.1 - - [27/Jul/2021:07:40:54 +0530] "GET /login?language=en HTTP/1.1" 200 876 http-bio-8080-exec-10 4
+127.0.0.1 - - [27/Jul/2021:07:41:14 +0530] "POST /login HTTP/1.1" 405 1047 http-bio-8080-exec-10 3

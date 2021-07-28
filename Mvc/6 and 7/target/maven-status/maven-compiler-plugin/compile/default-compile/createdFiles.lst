@@ -1,0 +1,8 @@
+registration\Customer.class
+registration\CityZipcodeList.class
+registration\CityZipcode.class
+registration\RegistrationController.class
+registration\CityZipcode$List.class
+registration\CityZipcodeConstraintValidator.class
+registration\Contact.class
+registration\ContactConstraintValidator.class
