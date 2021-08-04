@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        // You can take this value from user
+        const n = 100
+        // Initial empty array
+        const arr = [];
+             
+        do {
+            // Generating random number
+            const randomNumber = Math
+                .floor(Math.random() * 100) + 1
+            // Pushing into the array only 
+            // if the array does not contain it
+            if (!arr.includes(randomNumber)) {
+                arr.push(randomNumber);
+            }
+            
+        } while (arr.length < n);
+        // Printing the array elements
+        document.write(arr)
+
+        var max = 0;
+        var min = 0;
+        var even = 0;
+        var odd = 0;
+        var sum = 0;
+
+        for(i = 0; i < 100; i++){
+            
+            if(arr[i] > max) {max = arr[i];}
+
+            if(arr[i] < min) {min = arr[i];}
+
+            if(arr[i] % 2 == 0){even++;}
+            else{odd++;}
+
+            sum = arr[i] + sum;
+            //document.write(sum+"<br>")
+            //document.write(arr[i]+"<br>");
+            //document.write(i+"<br>")
+
+        }
+
+        document.write("<br> Max: "+max+"<br>");
+        document.write("Min: "+min+"<br>");
+        document.write("Even: "+even+"<br>");
+        document.write("Odd: "+odd+"<br>");
+        document.write("Sum: "+sum+"<br>");
+        document.write("Avg: "+sum/arr.length+"<br>");
+
+    </script>
+</body>
+</html>

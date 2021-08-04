@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment Q7</title>
+    </head>
+
+    <body>
+        <label for="input"> Enter Currency Value in dollars</label>
+        <input name="input"  type="number" id="in">
+        <button onclick="run()">calculate</button>
+        <p id="result"></p>
+
+        <script>
+                function run(){
+                    
+                    var val = document.getElementById("in").value;
+
+                    document.write(val*74.28 + " INR (Indian Rupees)" +"<br>");
+                    document.write(val*109.14 + " Yen (Japanase Yen)" +"<br>");
+                    document.write(val*0.84 + " Euro (Euro)" +"<br>");
+                    document.write(val*0.72 + " Pound Sterling (Pound Sterling)" +"<br>");
+                }
+            </script>
+    </body>
+</html>

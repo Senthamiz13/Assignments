@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignemnt Q5</title>
+    </head>
+
+
+    <body>
+        <script>
+        var yearsPrinted = 0;
+        var currentYear = 2021; 
+
+        function leapYears() {
+            for(var i = 1; i <= 20; i++){
+                if ((currentYear % 4 === 0) && (!((currentYear % 100===0) && (currentYear % 400 !== 0)))) {
+                    document.write(currentYear + "<br>");
+                    yearsPrinted++;
+                    currentYear++;
+        } else {
+            currentYear++;
+        }
+    }       
+}
+
+leapYears();
+        </script>
+    </body>
+</html>
+

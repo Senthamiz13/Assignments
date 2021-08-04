@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        function pigPhrase (phrase) {
+        var sentence = phrase.split(' ');
+        var piggedPhrase = [];
+
+        for (var i = 0; i <= sentence.length - 1; i++) {
+            piggedPhrase.push(pigWord(sentence[i]));
+        };
+        return piggedPhrase.join(' ');
+        }
+
+        function pigWord (word) {
+        //return word.slice(1) + word.slice( -word.length, findFirstVowel(word)) + 'ay';
+        let char = word;
+        var newword = word + word.charAt(0)+'ay';
+        return newword.slice(1);
+        }
+
+        document.write(pigPhrase("the quick brown fox"));
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment Q1</title>
+    </head>
+
+    <body>
+        <label for="input"> Enter the number</label>
+        <input name="input"  type="number" id="in">
+        <button onclick="run()">calculate</button>
+        <p id="result"></p>
+
+        <script>
+           function numberSum(N){
+                var total = 0;
+                    for(var i = 1; i <= N; i++)
+                    {
+                        if((i%3 == 0)||(i%5 == 0))
+                        total += i;
+                    }
+                    return total;
+                }
+
+                function run(){
+                    var val = document.getElementById("in").value;
+                    document.getElementById("result").innerHTML= numberSum(val)
+                }
+            </script>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Assignment 4</title>
+</head>
+
+<body>
+    <h2> Fraction of Heads</h2>
+    Enter no. Of Flips: <input type="number" id="num" name="num"><br><br>
+    <button onclick="headsRatio()">Calculate</button><br>
+    <p>Output:  <span id="output"></span></p>
+    <script>
+        function headsRatio() {
+        num = document.getElementById('num').value;
+        document.getElementById("output").innerHTML = (numHeads(num) / num);
+        }
+        function numHeads(num) {
+            var numOfHeads = 0;
+            for (var i = 0; i < num; i++) {
+                if (flipCoin() == "Heads") {
+                    numOfHeads++;
+                }
+            }
+            return(numOfHeads);
+        }
+        function flipCoin() {
+            if (Math.random() < 0.5) {
+                return ("Heads");
+            } else {
+                return ("Tails");
+            }
+        }
+    </script>
+</body>
+
+</html>

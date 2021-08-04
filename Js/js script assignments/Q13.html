@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <script>
+//JavaScript Program to find
+//sum of elements in a given array
+
+	// function to return sum of elements
+	// in an array of size n
+	function sum(arr) {
+		let sum = 0; // initialize sum
+
+		// Iterate through all elements
+		// and add them to sum
+		for (let i = 0; i < arr.length; i++)
+			sum += arr[i];
+
+		return sum;
+    }
+    function whilesum(ar){
+        var j = arr.length-1; 
+        var e = 0;
+        while(j!= -1) {
+            e = e + arr[j]; 
+            j--;
+        }
+        return e;
+    }
+    function dowhile(arr){
+        var k = arr.length-1; 
+        var f = 0;
+        do
+        {
+            f = f + arr[k]; 
+            k--;
+        } while(k!= -1) 
+            
+        return f;
+    }
+
+	// Driver code
+	let arr = [12, 3, 4, 15];
+    document.write("Sum of given array using for loop " + sum(arr) + "<br>");
+    document.write("Sum of given array using while loop  " + whilesum(arr)+ "<br>");
+    document.write("Sum of given array using do while loop " + dowhile(arr) );
+
+
+
+</script>
+
+    
+</body>
+</html>
