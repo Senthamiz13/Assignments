@@ -1,0 +1,14 @@
+<h3>Add/Delete Menu Here</h3>
+
+<div class="addComponent">
+    <input type="text" #Item>
+    <button (click)="addToList(Item.value)"> Add </button>
+  </div>
+
+  <ul>
+    <li *ngFor="let item of menulist; let i = index" (click)="removeItem(i)">
+      <label>{{item}}</label>
+    </li>
+  </ul>
+
+  

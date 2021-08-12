@@ -1,0 +1,20 @@
+<h3>Menu for {{restaurentName}} </h3>
+<!-- <p>{{myObj}}</p> -->
+
+<!-- iterating over result object menu -->
+ <ul class="heroes">
+    <li *ngFor="let item of result" (click) = "addtocart(item)">
+      <label>{{item}}</label>
+    </li>
+  </ul>
+  
+<!-- iterating over cart array -->
+<h3>Your Cart</h3>
+  <ol>
+    <li *ngFor="let item of cart">
+      <label>{{item}}</label>
+    </li>
+  </ol>
+
+  <!-- routing for confirmation page  -->
+  <a class ="btn" routerLink="/confirmation" >Place Order</a>

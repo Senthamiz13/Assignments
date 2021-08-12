@@ -1,0 +1,36 @@
+<h3 >Add/Delete Restaurents Here</h3>
+
+<!-- <div> -->
+  <!-- Restaurant Name <input type="text" class="css-input" #name > -->
+    <!-- Menu <input type="text" style="width: 500px;" placeholder="Add items here seperated by commas"  -->
+    <!-- class="css-input"   #Item > -->
+
+    <!-- <button class="btn" (click) = "onAddList(name.value,Item.value)">add</button> -->
+<!-- </div> -->
+
+<!-- <h3>List of Restaurants and Menu</h3> -->
+<!-- <ul class="heroes"> -->
+    <!-- <li *ngFor = "let restaurant of restaurentList; let i = index" (click)="removeRestaurent(i)"> -->
+        <!-- <span class="badge">{{restaurant.name}}</span>{{restaurant.menu}} <br> -->
+    <!-- </li> -->
+<!-- </ul> -->
+
+<!-- ************************************************************************** -->
+
+
+<!-- inputs for adding restaurents elment to restaurants List -->
+<div>
+    Restaurant Name <input type="text" class="css-input" #name >
+      Menu <input type="text" style="width: 500px;" placeholder="Add items here seperated by commas" 
+      class="css-input"   #Item >
+     <button class="btn" (click) = "addRestaurantList(name.value,Item.value)">add</button>
+  </div>
+  
+  <!-- display all restaurants from restaurantList -->
+  <h3>List of Restaurants and Menu</h3>
+  <p style="font-style: italic;">Click on the items to delete</p>
+  <ul class="heroes">
+      <li *ngFor = "let restaurant of restaurentList; let i = index" (click)="removeRestaurant(i)">
+          <span class="badge">{{restaurant.name}}</span>{{restaurant.menu}} <br>
+      </li>
+  </ul>

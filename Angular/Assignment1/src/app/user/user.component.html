@@ -1,0 +1,10 @@
+<h2>User Page</h2>
+<h3>List of Restaurants and Menu</h3>
+  <ul class="heroes">
+
+      <!-- ng for looping into restaurentList -->
+      
+      <li *ngFor = "let restaurant of restaurentList" (click)="onClick(restaurant)">
+          <span class="badge">{{restaurant.name}}</span> <br>
+      </li>
+  </ul>
