@@ -1,0 +1,73 @@
+<div class="container-fluid" style= "width: 700px">
+    <h2 class="text-center" *ngIf = "!submitted && !confirmed">Add new Advertisement Form</h2>
+<!-- start of add form  -->
+    <form [formGroup] = "adForm" (ngSubmit) = "onsubmit()" *ngIf =!submitted >
+        <div class="form-group">
+            <label>Title</label>
+            <input [class.is-invalid]="adForm.get('title')?.invalid && adForm.get('title')?.touched" 
+                    formControlName = "title" class="form-control" type="text">
+            <small class="text-danger" *ngIf="adForm.get('title')?.invalid && adForm.get('title')?.touched">
+                Title required</small>
+        </div>
+
+        <div class="form-group">
+            <label>Name</label>
+            <input [class.is-invalid]="adForm.get('name')?.invalid && adForm.get('name')?.touched" 
+                    formControlName = "name" class="form-control" type="text">
+            <small class="text-danger" *ngIf="adForm.get('name')?.invalid && adForm.get('name')?.touched">
+                Name required</small>
+        </div>
+        
+        <div class="form-group">
+            <label>Category</label>
+            <select formControlName = "category" class="custom-select" name="topic">
+                <option value = "default"> select the category</option>
+                <option *ngFor = "let category of categories" >{{category}}</option >
+            </select>
+            <small class="text-danger" *ngIf="adForm.get('category')?.invalid && adForm.get('category')?.touched">
+                category required</small>
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            <textarea [class.is-invalid]="adForm.get('description')?.invalid && adForm.get('description')?.touched" 
+            formControlName = "description" class="form-control form-control-sm" rows="5"></textarea>
+            <small class="text-danger" *ngIf="adForm.get('description')?.invalid && adForm.get('description')?.touched">
+                Description required</small>
+        </div>
+        <button [disabled] ="adForm?.invalid" class="btn btn-primary" >Submit</button>
+    </form>
+<!-- end of add form  -->
+
+<!-- start of confirmation table activated only after submitting form  -->
+    <div class="container" *ngIf = "submitted && !confirmed">
+        <h3>Confirm you Advertisement</h3>
+        <table  class="table table-striped"> 
+           <thead>
+              <tr>
+                 <th>Title</th>
+                 <th>Name</th>
+                 <th>Category</th>
+                 <th>Description</th>
+              </tr>
+           </thead>
+           <tbody>
+              <tr>
+                 <th>{{ adForm.value.title }}</th>
+                 <td>{{ adForm.value.name }}</td>
+                 <td>{{ adForm.value.category }}</td>
+                 <td>{{ adForm.value.description }}</td>
+                 <td>
+                    <button class="btn btn-primary btn-sm" (click)="confirm()" type="button" >Submit</button>
+                    <button class="btn btn-danger btn-sm" (click)="cancel()" type="button" >cancel</button>
+                 </td>
+              </tr>
+           </tbody>
+        </table>
+     </div>
+<!-- end of confirmation table  -->
+
+<!-- confirmation header  -->
+     <div *ngIf = confirmed >
+         <h4 class="text-center" style="color:green;">Advertisement Added</h4>
+     </div>
+</div>

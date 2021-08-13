@@ -1,0 +1,44 @@
+<div class="container-fluid" style= "width: 700px">
+    <h2 class="text-center">Edit Advertisement</h2>
+
+    <form [formGroup]="adForm" (ngSubmit)="onsubmit()" *ngIf=!submitted>
+        <div class="form-group">
+            <label>Title</label>
+            <input [class.is-invalid]="adForm.get('title')?.invalid && adForm.get('title')?.touched"
+                formControlName="title" class="form-control" type="text">
+                <!-- validation error label -->
+            <small class="text-danger" *ngIf="adForm.get('title')?.invalid && adForm.get('title')?.touched">
+                Title required</small>
+        </div>
+
+        <div class="form-group">
+            <label>Name</label>
+            <input [class.is-invalid]="adForm.get('name')?.invalid && adForm.get('name')?.touched"
+                formControlName="name" class="form-control" type="text">
+                 <!-- validation error label -->
+            <small class="text-danger" *ngIf="adForm.get('name')?.invalid && adForm.get('name')?.touched">
+                Name required</small>
+        </div>
+
+        <div class="form-group">
+            <label>Category</label>
+            <select formControlName="category" class="custom-select" name="topic">
+                <option value="default"> select the category</option>
+                <option *ngFor="let category of categories">{{category}}</option>
+            </select>
+             <!-- validation error label -->
+            <small class="text-danger" *ngIf="adForm.get('category')?.invalid && adForm.get('category')?.touched">
+                category required</small>
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            <textarea [class.is-invalid]="adForm.get('description')?.invalid && adForm.get('description')?.touched"
+                formControlName="description" class="form-control form-control-sm" rows="5"></textarea>
+            <!-- validation error label -->
+            <small class="text-danger" *ngIf="adForm.get('description')?.invalid && adForm.get('description')?.touched">
+                Description required</small>
+        </div>
+        <button [disabled]="adForm?.invalid" class="btn btn-primary">Update</button>
+        <button class="btn btn-danger"  routerLink="/table" >cancel</button>
+    </form>
+</div>

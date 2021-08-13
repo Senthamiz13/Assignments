@@ -1,0 +1,27 @@
+<div class="container" style= "width: 700px">
+    <h1>List of Advertisement</h1>
+    <table  class="table table-striped"> 
+       <thead>
+          <tr>
+             <th>Title</th>
+             <th>Name</th>
+             <th>Category</th>
+             <th>Description</th>
+             <th>Actions</th>
+          </tr>
+       </thead>
+       <tbody>
+          <tr *ngFor="let item of list; let i = index">
+             <th>{{ item.title }}</th>
+             <td>{{ item.name }}</td>
+             <td>{{ item.category }}</td>
+             <td>{{ item.description}}</td>
+             <td>
+                <button class="btn btn-primary btn-sm"  (click)="editad(i)" type="button" >Edit</button>
+                <button class="btn btn-danger btn-sm" 
+                (click)="removead(i)" type="button" >Delete</button>
+             </td>
+          </tr>
+       </tbody>
+    </table>
+ </div>

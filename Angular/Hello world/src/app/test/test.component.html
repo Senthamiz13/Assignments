@@ -1,0 +1,27 @@
+<div>
+    <h2>{{parentData}}</h2>
+    <br>
+    <button  (click) = "fireevent()"> make event</button>
+
+    <h3>{{newname | lowercase}}</h3>
+    <h3>{{newname | uppercase}}</h3>
+
+    <h3>{{newname | titlecase}}</h3>
+    <h3>{{newname | slice:3:8}}</h3>
+
+
+    <h3>{{person | json}}</h3>
+
+
+    <h3>{{5.678 | number: '1.2-3'}}</h3>
+    <h3>{{5.678 | number: '3.4-5'}}</h3>
+    <h3>{{5.678 | number: '3.1-2'}}</h3>
+    <h3>{{0.25 | percent}}</h3>
+    <h3>{{0.25 | currency: 'INR'}}</h3>
+
+    <h3>{{date}}</h3>
+    <h3>{{date | date: 'short'}}</h3>
+    <h3>{{date | date: 'long'}}</h3>
+
+
+</div>
