@@ -1,0 +1,9 @@
+server:
+  port: 8080
+
+zuul:
+  routes:
+    patient:
+      url: http://localhost:8081
+    
+  
